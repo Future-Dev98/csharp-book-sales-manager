@@ -1,0 +1,9 @@
+C:\Users\giang\source\repos\BookSalesSanager\bin\Debug\BookSalesSanager.exe.config
+C:\Users\giang\source\repos\BookSalesSanager\bin\Debug\BookSalesSanager.exe
+C:\Users\giang\source\repos\BookSalesSanager\bin\Debug\BookSalesSanager.pdb
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.csproj.AssemblyReference.cache
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.Properties.Resources.resources
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.csproj.GenerateResource.cache
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.csproj.CoreCompileInputs.cache
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.exe
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.pdb
