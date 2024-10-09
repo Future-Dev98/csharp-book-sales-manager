@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookSalesSanager.Model;
 
 namespace BookSalesSanager
 {
     public partial class Form1 : Form
     {
+        public DataProvider dataProvider = new DataProvider();
+
         public Form1()
         {
             InitializeComponent();
+            init();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -110,6 +114,32 @@ namespace BookSalesSanager
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Booksalesmanager booksalesmanager = new Booksalesmanager();
+            booksalesmanager.CreateTable();
+        }
+
+        private void init()
+        {
+            initBook();
+        }
+
+        private void initBook()
+        {
+            loadBookList();
+        }
+
+        private void loadBookList()
+        {
+            DataTable dt = new DataTable();
+            StringBuilder query = new StringBuilder("SELECT * FROM book");
+
+            dt = dataProvider.execQuery(query.ToString());
+
+            bookList.DataSource = dt;
         }
     }
 }

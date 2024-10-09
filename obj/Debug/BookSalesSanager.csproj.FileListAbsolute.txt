@@ -17,3 +17,4 @@ C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.csproj.Gen
 C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.csproj.CoreCompileInputs.cache
 C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.exe
 C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.pdb
+C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.Form1.resources

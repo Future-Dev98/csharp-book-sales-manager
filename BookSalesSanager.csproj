@@ -61,6 +61,9 @@
     </Compile>
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Booksalesmanager.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\GoodsReceipt.cs" />
+    <Compile Include="Model\Invoice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

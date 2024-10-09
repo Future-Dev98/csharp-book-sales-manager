@@ -1,26 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\",
+  "WorkspaceRootPath": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\hyv\\source\\repos\\booksalesmanager\\model\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:model\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\hyv\\source\\repos\\booksalesmanager\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\hyv\\source\\repos\\booksalesmanager\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\hyv\\source\\repos\\booksalesmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\giang\\source\\repos\\booksalessanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\hyv\\source\\repos\\booksalesmanager\\booksalesmanagerdataset.xsc||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:booksalesmanagerdataset.xsc||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\giang\\source\\repos\\booksalessanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|c:\\users\\giang\\source\\repos\\booksalessanager\\model\\booksalesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47387B21-443C-4A01-9858-74A072B2945A}|BookSalesSanager.csproj|solutionrelative:model\\booksalesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,70 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-09T09:13:41.848Z",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAcwI0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T15:34:06.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\Model\\Book.cs",
-              "RelativeDocumentMoniker": "Model\\Book.cs",
-              "ToolTip": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\Model\\Book.cs",
-              "RelativeToolTip": "Model\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAATAAAAAAAAAA==",
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T09:06:13.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T15:34:02.027Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DataProvider.cs",
-              "DocumentMoniker": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\DataProvider.cs",
-              "RelativeDocumentMoniker": "DataProvider.cs",
-              "ToolTip": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\DataProvider.cs",
-              "RelativeToolTip": "DataProvider.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAiwCAAAABGAAAAAAAAAA==",
+              "Title": "Booksalesmanager.cs",
+              "DocumentMoniker": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\Model\\Booksalesmanager.cs",
+              "RelativeDocumentMoniker": "Model\\Booksalesmanager.cs",
+              "ToolTip": "C:\\Users\\giang\\source\\repos\\BookSalesSanager\\Model\\Booksalesmanager.cs",
+              "RelativeToolTip": "Model\\Booksalesmanager.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T07:07:14.193Z",
+              "WhenOpened": "2024-10-09T09:51:19.363Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "booksalesmanagerDataSet.xsc",
-              "DocumentMoniker": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\booksalesmanagerDataSet.xsc",
-              "RelativeDocumentMoniker": "booksalesmanagerDataSet.xsc",
-              "ToolTip": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\booksalesmanagerDataSet.xsc",
-              "RelativeToolTip": "booksalesmanagerDataSet.xsc",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001612|",
-              "WhenOpened": "2024-10-09T07:02:07.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\HYV\\source\\repos\\BookSalesManager\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T23:28:02.839Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
