@@ -7,3 +7,13 @@ C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.csproj.G
 C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.csproj.CoreCompileInputs.cache
 C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.exe
 C:\Users\giang\source\repos\BookSalesSanager\obj\Debug\BookSalesSanager.pdb
+C:\Users\HYV\source\repos\BookSalesManager\bin\Debug\BookSalesSanager.exe.config
+C:\Users\HYV\source\repos\BookSalesManager\bin\Debug\BookSalesSanager.exe
+C:\Users\HYV\source\repos\BookSalesManager\bin\Debug\BookSalesSanager.pdb
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.csproj.AssemblyReference.cache
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.Form1.resources
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.Properties.Resources.resources
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.csproj.GenerateResource.cache
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.csproj.CoreCompileInputs.cache
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.exe
+C:\Users\HYV\source\repos\BookSalesManager\obj\Debug\BookSalesSanager.pdb
