@@ -18,9 +18,11 @@ namespace BookSalesSanager
         private int bookId;
         private int categoryId;
         private int invoiceId;
+        private int goodReceiptId;
 
         public Form1()
         {
+            Booksalesmanager booksalesmanager = new Booksalesmanager();
             InitializeComponent();
             init();
         }
@@ -157,8 +159,7 @@ namespace BookSalesSanager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Booksalesmanager booksalesmanager = new Booksalesmanager();
-            booksalesmanager.CreateTable();
+            
         }
 
         private void init()
@@ -172,6 +173,7 @@ namespace BookSalesSanager
             loadBookList();
             loadBookCategories();
             initInvoice();
+            initGoodReceipt();
         }
 
         private void initCategory()
@@ -240,7 +242,7 @@ namespace BookSalesSanager
         private void loadGoodReceipt()
         {
             DataTable dt = new DataTable();
-            string query = "SELECT goods_receipt_details_id as [Good Receipt ID], date as [Good Receipt date], supplier_name as [Supplier name] FROM goods_receipt";
+            string query = "SELECT id as [Good Receipt ID], date as [Good Receipt date], supplier_name as [Supplier name] FROM good_receipt";
 
             dt = dataProvider.execQuery(query);
             goodReceiptList.DataSource = dt;
@@ -375,7 +377,7 @@ namespace BookSalesSanager
             }
             else
             {
-                MessageBox.Show("Delete book failed!");
+                MessageBox.Show("Delete invoice failed!");
             }
         }
 
@@ -384,27 +386,57 @@ namespace BookSalesSanager
             int rowId = e.RowIndex;
 
             if (rowId == -1) rowId = 0;
-            if (rowId == invoiceList.Rows.Count - 1) rowId = rowId - 1;
-            DataGridViewRow row = invoiceList.Rows[rowId];
-            invoiceId = (int)row.Cells[0].Value;
-            dInvoiceDate.Text = Convert.ToDateTime(row.Cells[1].Value).ToString("yyyy-MM-dd");
-            txtInvoiceCustomerName.Text = row.Cells[2].Value.ToString();
-            txtInvoiceCustomerPhone.Text = row.Cells[3].Value.ToString();
+            if (rowId == goodReceiptList.Rows.Count - 1) rowId = rowId - 1;
+            DataGridViewRow row = goodReceiptList.Rows[rowId];
+            goodReceiptId = (int)row.Cells[0].Value;
+            dateGoodReceipt.Text = Convert.ToDateTime(row.Cells[1].Value).ToString("yyyy-MM-dd");
+            txtGoodReceiptSupplierName.Text = row.Cells[2].Value.ToString();
         }
 
         private void addGoodReceipt_Click(object sender, EventArgs e)
         {
-
+            string query = $@"INSERT INTO good_receipt(date, supplier_name)
+                            VALUES('{Convert.ToDateTime(dateGoodReceipt.Text).ToString("yyyy-MM-dd")}', '{txtGoodReceiptSupplierName.Text}')";
+            int result = dataProvider.execNonQuery(query);
+            if (result > 0)
+            {
+                loadGoodReceipt();
+                MessageBox.Show("Add good receipt successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Add good receipt failed!");
+            }
         }
 
         private void editGoodReceipt_Click(object sender, EventArgs e)
         {
-
+            string query = $@"UPDATE good_receipt SET date='{Convert.ToDateTime(dateGoodReceipt.Text).ToString("yyyy-MM-dd")}', supplier_name='{txtGoodReceiptSupplierName.Text}' WHERE id={goodReceiptId}";
+            int result = dataProvider.execNonQuery(query);
+            if (result > 0)
+            {
+                loadGoodReceipt();
+                MessageBox.Show("Update good receipt successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Update good receipt failed!");
+            }
         }
 
         private void deleteGoodReceipt_Click(object sender, EventArgs e)
         {
-
+            string query = $@"DELETE FROM good_receipt WHERE id={goodReceiptId}";
+            int result = dataProvider.execNonQuery(query);
+            if (result > 0)
+            {
+                loadGoodReceipt();
+                MessageBox.Show("Delete good receipt successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Delete good receipt failed!");
+            }
         }
     }
 }

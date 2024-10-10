@@ -184,6 +184,7 @@
             // 
             // goodReceiptList
             // 
+            this.goodReceiptList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.goodReceiptList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.goodReceiptList.Location = new System.Drawing.Point(3, 3);
             this.goodReceiptList.Name = "goodReceiptList";
