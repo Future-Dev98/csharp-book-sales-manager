@@ -184,6 +184,11 @@ namespace BookSalesSanager
             loadInvoice();
         }
 
+        private void initGoodReceipt()
+        {
+            loadGoodReceipt();
+        }
+
         private void loadBookList()
         {
             DataTable dt = new DataTable();
@@ -230,6 +235,15 @@ namespace BookSalesSanager
 
             dt = dataProvider.execQuery(query);
             invoiceList.DataSource = dt;
+        }
+
+        private void loadGoodReceipt()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT goods_receipt_details_id as [Good Receipt ID], date as [Good Receipt date], supplier_name as [Supplier name] FROM goods_receipt";
+
+            dt = dataProvider.execQuery(query);
+            goodReceiptList.DataSource = dt;
         }
         private void cbBookCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -363,6 +377,34 @@ namespace BookSalesSanager
             {
                 MessageBox.Show("Delete book failed!");
             }
+        }
+
+        private void goodReceiptList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowId = e.RowIndex;
+
+            if (rowId == -1) rowId = 0;
+            if (rowId == invoiceList.Rows.Count - 1) rowId = rowId - 1;
+            DataGridViewRow row = invoiceList.Rows[rowId];
+            invoiceId = (int)row.Cells[0].Value;
+            dInvoiceDate.Text = Convert.ToDateTime(row.Cells[1].Value).ToString("yyyy-MM-dd");
+            txtInvoiceCustomerName.Text = row.Cells[2].Value.ToString();
+            txtInvoiceCustomerPhone.Text = row.Cells[3].Value.ToString();
+        }
+
+        private void addGoodReceipt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editGoodReceipt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteGoodReceipt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

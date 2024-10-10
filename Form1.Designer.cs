@@ -30,14 +30,14 @@
         {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateGoodReceipt = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtGoodReceiptSupplierName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deleteGoodReceipt = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.addGoodReceipt = new System.Windows.Forms.Button();
+            this.goodReceiptList = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.invoiceList = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -77,7 +77,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodReceiptList)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceList)).BeginInit();
             this.panel4.SuspendLayout();
@@ -94,7 +94,7 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.panel2);
-            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Controls.Add(this.goodReceiptList);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -105,24 +105,24 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dateGoodReceipt);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtGoodReceiptSupplierName);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.deleteGoodReceipt);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.addGoodReceipt);
             this.panel2.Location = new System.Drawing.Point(3, 476);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1156, 103);
             this.panel2.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dateGoodReceipt
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(89, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(332, 26);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dateGoodReceipt.Location = new System.Drawing.Point(89, 10);
+            this.dateGoodReceipt.Name = "dateGoodReceipt";
+            this.dateGoodReceipt.Size = new System.Drawing.Size(332, 26);
+            this.dateGoodReceipt.TabIndex = 13;
             // 
             // label7
             // 
@@ -152,14 +152,15 @@
             this.label8.UseMnemonic = false;
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // button1
+            // deleteGoodReceipt
             // 
-            this.button1.Location = new System.Drawing.Point(508, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.deleteGoodReceipt.Location = new System.Drawing.Point(508, 56);
+            this.deleteGoodReceipt.Name = "deleteGoodReceipt";
+            this.deleteGoodReceipt.Size = new System.Drawing.Size(183, 33);
+            this.deleteGoodReceipt.TabIndex = 2;
+            this.deleteGoodReceipt.Text = "Delete";
+            this.deleteGoodReceipt.UseVisualStyleBackColor = true;
+            this.deleteGoodReceipt.Click += new System.EventHandler(this.deleteGoodReceipt_Click);
             // 
             // button2
             // 
@@ -169,23 +170,26 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.editGoodReceipt_Click);
             // 
-            // button3
+            // addGoodReceipt
             // 
-            this.button3.Location = new System.Drawing.Point(19, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 33);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.addGoodReceipt.Location = new System.Drawing.Point(19, 56);
+            this.addGoodReceipt.Name = "addGoodReceipt";
+            this.addGoodReceipt.Size = new System.Drawing.Size(188, 33);
+            this.addGoodReceipt.TabIndex = 0;
+            this.addGoodReceipt.Text = "Add";
+            this.addGoodReceipt.UseVisualStyleBackColor = true;
+            this.addGoodReceipt.Click += new System.EventHandler(this.addGoodReceipt_Click);
             // 
-            // dataGridView2
+            // goodReceiptList
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1156, 467);
-            this.dataGridView2.TabIndex = 4;
+            this.goodReceiptList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.goodReceiptList.Location = new System.Drawing.Point(3, 3);
+            this.goodReceiptList.Name = "goodReceiptList";
+            this.goodReceiptList.Size = new System.Drawing.Size(1156, 467);
+            this.goodReceiptList.TabIndex = 4;
+            this.goodReceiptList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goodReceiptList_CellClick);
             // 
             // tabPage3
             // 
@@ -582,7 +586,7 @@
             this.tabPage4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodReceiptList)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.invoiceList)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -605,14 +609,14 @@
 
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateGoodReceipt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtGoodReceiptSupplierName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteGoodReceipt;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button addGoodReceipt;
+        private System.Windows.Forms.DataGridView goodReceiptList;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView invoiceList;
         private System.Windows.Forms.Panel panel4;
