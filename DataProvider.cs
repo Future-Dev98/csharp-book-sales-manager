@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BookSalesSanager
 {
@@ -18,11 +19,18 @@ namespace BookSalesSanager
             DataTable data = new DataTable();
             using (SqlConnection con = new SqlConnection(connectStr))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(data);
-                con.Close();
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(data);
+                    con.Close();
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show($"An error occurred: {e.Message}");
+                }
             }
             return data;
         }
@@ -33,10 +41,17 @@ namespace BookSalesSanager
             int data = 0;
             using (SqlConnection con = new SqlConnection(connectStr))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                data = cmd.ExecuteNonQuery();
-                con.Close();
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    data = cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"An error occurred: {e.Message}");
+                }
             }
             return data;
         }
@@ -46,10 +61,17 @@ namespace BookSalesSanager
             object data = 0;
             using (SqlConnection con = new SqlConnection(connectStr))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                data = cmd.ExecuteScalar();
-                con.Close();
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    data = cmd.ExecuteScalar();
+                    con.Close();
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show($"An error occurred: {e.Message}");
+                }
             }
             return data;
         }

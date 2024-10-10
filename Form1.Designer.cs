@@ -39,17 +39,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.invoiceList = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
+            this.txtInvoiceCustomerPhone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dInvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.txtInvoiceCustomerName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.deleteInvoice = new System.Windows.Forms.Button();
+            this.editInvoice = new System.Windows.Forms.Button();
+            this.addInvoice = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
@@ -57,11 +57,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataCategories = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBookPrice = new System.Windows.Forms.TextBox();
             this.cbBookCategory = new System.Windows.Forms.ComboBox();
-            this.nmPrice = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.nmQty = new System.Windows.Forms.NumericUpDown();
@@ -79,14 +79,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceList)).BeginInit();
             this.panel4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataCategories)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -190,7 +189,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView4);
+            this.tabPage3.Controls.Add(this.invoiceList);
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
@@ -200,36 +199,38 @@
             this.tabPage3.Text = "Invoice";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // invoiceList
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1156, 423);
-            this.dataGridView4.TabIndex = 3;
+            this.invoiceList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.invoiceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.invoiceList.Location = new System.Drawing.Point(6, 3);
+            this.invoiceList.Name = "invoiceList";
+            this.invoiceList.Size = new System.Drawing.Size(1156, 423);
+            this.invoiceList.TabIndex = 3;
+            this.invoiceList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.invoiceList_CellClick);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtCustomerPhone);
+            this.panel4.Controls.Add(this.txtInvoiceCustomerPhone);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.dInvoiceDate);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.txtInvoiceCustomerName);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.button7);
-            this.panel4.Controls.Add(this.button8);
-            this.panel4.Controls.Add(this.button9);
+            this.panel4.Controls.Add(this.deleteInvoice);
+            this.panel4.Controls.Add(this.editInvoice);
+            this.panel4.Controls.Add(this.addInvoice);
             this.panel4.Location = new System.Drawing.Point(6, 432);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1156, 147);
             this.panel4.TabIndex = 2;
             // 
-            // txtCustomerPhone
+            // txtInvoiceCustomerPhone
             // 
-            this.txtCustomerPhone.Location = new System.Drawing.Point(644, 56);
-            this.txtCustomerPhone.Name = "txtCustomerPhone";
-            this.txtCustomerPhone.Size = new System.Drawing.Size(255, 26);
-            this.txtCustomerPhone.TabIndex = 15;
+            this.txtInvoiceCustomerPhone.Location = new System.Drawing.Point(644, 56);
+            this.txtInvoiceCustomerPhone.Name = "txtInvoiceCustomerPhone";
+            this.txtInvoiceCustomerPhone.Size = new System.Drawing.Size(255, 26);
+            this.txtInvoiceCustomerPhone.TabIndex = 15;
             // 
             // label11
             // 
@@ -274,37 +275,40 @@
             this.label16.Text = "Customer name";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
-            // button7
+            // deleteInvoice
             // 
-            this.button7.Location = new System.Drawing.Point(504, 104);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(183, 33);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Delete";
-            this.button7.UseVisualStyleBackColor = true;
+            this.deleteInvoice.Location = new System.Drawing.Point(504, 104);
+            this.deleteInvoice.Name = "deleteInvoice";
+            this.deleteInvoice.Size = new System.Drawing.Size(183, 33);
+            this.deleteInvoice.TabIndex = 2;
+            this.deleteInvoice.Text = "Delete";
+            this.deleteInvoice.UseVisualStyleBackColor = true;
+            this.deleteInvoice.Click += new System.EventHandler(this.deleteInvoice_Click);
             // 
-            // button8
+            // editInvoice
             // 
-            this.button8.Location = new System.Drawing.Point(255, 104);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(197, 34);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Edit";
-            this.button8.UseVisualStyleBackColor = true;
+            this.editInvoice.Location = new System.Drawing.Point(255, 104);
+            this.editInvoice.Name = "editInvoice";
+            this.editInvoice.Size = new System.Drawing.Size(197, 34);
+            this.editInvoice.TabIndex = 1;
+            this.editInvoice.Text = "Edit";
+            this.editInvoice.UseVisualStyleBackColor = true;
+            this.editInvoice.Click += new System.EventHandler(this.editInvoice_Click);
             // 
-            // button9
+            // addInvoice
             // 
-            this.button9.Location = new System.Drawing.Point(15, 104);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(188, 33);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Add";
-            this.button9.UseVisualStyleBackColor = true;
+            this.addInvoice.Location = new System.Drawing.Point(15, 104);
+            this.addInvoice.Name = "addInvoice";
+            this.addInvoice.Size = new System.Drawing.Size(188, 33);
+            this.addInvoice.TabIndex = 0;
+            this.addInvoice.Text = "Add";
+            this.addInvoice.UseVisualStyleBackColor = true;
+            this.addInvoice.Click += new System.EventHandler(this.addInvoice_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Controls.Add(this.dataCategories);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -353,7 +357,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.btnDeleteCategory);
             // 
             // button5
             // 
@@ -363,7 +367,7 @@
             this.button5.TabIndex = 1;
             this.button5.Text = "Edit";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.btnEditCategory);
             // 
             // button6
             // 
@@ -373,15 +377,19 @@
             this.button6.TabIndex = 0;
             this.button6.Text = "Add";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.btnAddCategory);
             // 
-            // dataGridView3
+            // dataCategories
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1156, 434);
-            this.dataGridView3.TabIndex = 1;
+            this.dataCategories.AllowUserToOrderColumns = true;
+            this.dataCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataCategories.Location = new System.Drawing.Point(3, 3);
+            this.dataCategories.Name = "dataCategories";
+            this.dataCategories.Size = new System.Drawing.Size(1156, 434);
+            this.dataCategories.TabIndex = 1;
+            this.dataCategories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCategories_CellClick);
+            this.dataCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCategories_CellContentClick);
             // 
             // tabPage1
             // 
@@ -397,8 +405,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtBookPrice);
             this.panel1.Controls.Add(this.cbBookCategory);
-            this.panel1.Controls.Add(this.nmPrice);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.nmQty);
@@ -416,6 +424,13 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtBookPrice
+            // 
+            this.txtBookPrice.Location = new System.Drawing.Point(331, 111);
+            this.txtBookPrice.Name = "txtBookPrice";
+            this.txtBookPrice.Size = new System.Drawing.Size(194, 26);
+            this.txtBookPrice.TabIndex = 13;
+            // 
             // cbBookCategory
             // 
             this.cbBookCategory.FormattingEnabled = true;
@@ -423,14 +438,7 @@
             this.cbBookCategory.Name = "cbBookCategory";
             this.cbBookCategory.Size = new System.Drawing.Size(274, 28);
             this.cbBookCategory.TabIndex = 12;
-            // 
-            // nmPrice
-            // 
-            this.nmPrice.Location = new System.Drawing.Point(333, 109);
-            this.nmPrice.Name = "nmPrice";
-            this.nmPrice.Size = new System.Drawing.Size(120, 26);
-            this.nmPrice.TabIndex = 11;
-            this.nmPrice.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.cbBookCategory.SelectedIndexChanged += new System.EventHandler(this.cbBookCategory_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -453,6 +461,11 @@
             // nmQty
             // 
             this.nmQty.Location = new System.Drawing.Point(125, 109);
+            this.nmQty.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nmQty.Name = "nmQty";
             this.nmQty.Size = new System.Drawing.Size(70, 26);
             this.nmQty.TabIndex = 8;
@@ -463,6 +476,7 @@
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(259, 26);
             this.txtAuthor.TabIndex = 7;
+            this.txtAuthor.TextChanged += new System.EventHandler(this.txtAuthor_TextChanged);
             // 
             // txtBookName
             // 
@@ -509,6 +523,7 @@
             this.btnBookDelete.TabIndex = 2;
             this.btnBookDelete.Text = "Delete";
             this.btnBookDelete.UseVisualStyleBackColor = true;
+            this.btnBookDelete.Click += new System.EventHandler(this.btnBookDelete_Click);
             // 
             // btnBookEdit
             // 
@@ -518,6 +533,7 @@
             this.btnBookEdit.TabIndex = 1;
             this.btnBookEdit.Text = "Edit";
             this.btnBookEdit.UseVisualStyleBackColor = true;
+            this.btnBookEdit.Click += new System.EventHandler(this.btnBookEdit_Click);
             // 
             // btnBookAdd
             // 
@@ -527,15 +543,17 @@
             this.btnBookAdd.TabIndex = 0;
             this.btnBookAdd.Text = "Add";
             this.btnBookAdd.UseVisualStyleBackColor = true;
-            this.btnBookAdd.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnBookAdd.Click += new System.EventHandler(this.btnAddBook);
             // 
             // bookList
             // 
+            this.bookList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookList.Location = new System.Drawing.Point(6, 6);
+            this.bookList.Location = new System.Drawing.Point(8, 6);
             this.bookList.Name = "bookList";
             this.bookList.Size = new System.Drawing.Size(1156, 361);
             this.bookList.TabIndex = 0;
+            this.bookList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellClick);
             this.bookList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabControl1
@@ -566,17 +584,16 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceList)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataCategories)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -597,17 +614,17 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView invoiceList;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtCustomerPhone;
+        private System.Windows.Forms.TextBox txtInvoiceCustomerPhone;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dInvoiceDate;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtInvoiceCustomerName;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button deleteInvoice;
+        private System.Windows.Forms.Button editInvoice;
+        private System.Windows.Forms.Button addInvoice;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtCategoryName;
@@ -615,14 +632,12 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataCategories;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbBookCategory;
-        private System.Windows.Forms.NumericUpDown nmPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown nmQty;
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.TextBox txtBookName;
         private System.Windows.Forms.Label label3;
@@ -633,6 +648,8 @@
         private System.Windows.Forms.Button btnBookAdd;
         private System.Windows.Forms.DataGridView bookList;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.NumericUpDown nmQty;
+        private System.Windows.Forms.TextBox txtBookPrice;
     }
 }
 
