@@ -69,6 +69,7 @@ namespace BookSalesSanager.Model
                           good_receipt_id INT,
                           book_id INT,
                           qty INT,
+                          price DECIMAL(18,2),
                           CONSTRAINT FK_good_receipt_details_good_receipt FOREIGN KEY (good_receipt_id) REFERENCES good_receipt(id),
                           CONSTRAINT FK_good_receipt_details_book FOREIGN KEY (book_id) REFERENCES book(id)
                       );
@@ -118,7 +119,7 @@ namespace BookSalesSanager.Model
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occurredssss: " + ex.Message);
+                    MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
         }
