@@ -101,17 +101,17 @@ namespace BookSalesSanager
             string checkQuery = $"SELECT COUNT(*) FROM invoice_details WHERE invoice_id = {invoiceDetailId} AND book_id = {bookId}";
             DataTable dt = dataProvider.execQuery(checkQuery);
 
-            string query = $"INSERT INTO good_receipt_details(good_receipt_id, book_id, qty, price) VALUES({goodReceiptID}, {bookId}, {nmQty.Value}, {nmPrice.Value})";
+            string query = $"INSERT INTO invoice_details(book_id, invoice_id, qty) VALUES({bookId}, {invoiceDetailId}, {nmQty.Value})";
             if (dt.Rows.Count > 0 && Convert.ToInt32(dt.Rows[0][0]) > 0)
             {
-                query = $"UPDATE good_receipt_details SET qty={nmQty.Value}, price={nmPrice.Value} WHERE good_receipt_id={goodReceiptID} AND book_id={bookId}";
+                query = $"UPDATE good_receipt_details SET qty={nmQty.Value} WHERE invoice_id={invoiceDetailId} AND book_id={bookId}";
             }
 
             int result = dataProvider.execNonQuery(query);
 
             if (result > 0)
             {
-                loadGoodReceipt();
+                loadInvoiceDetails();
                 MessageBox.Show("Added good receipt successfully!");
             }
             else

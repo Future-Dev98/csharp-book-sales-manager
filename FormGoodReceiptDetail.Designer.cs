@@ -201,6 +201,7 @@
             this.Controls.Add(this.title);
             this.Name = "FormGoodReceiptDetail";
             this.Text = "FormGoodReceiptDetail";
+            this.Load += new System.EventHandler(this.FormGoodReceiptDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).EndInit();

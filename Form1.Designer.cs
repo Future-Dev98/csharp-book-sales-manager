@@ -42,6 +42,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.invoiceList = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnInvoiceDetail = new System.Windows.Forms.Button();
             this.txtInvoiceCustomerPhone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dInvoiceDate = new System.Windows.Forms.DateTimePicker();
@@ -61,7 +62,6 @@
             this.dataCategories = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtBookPrice = new System.Windows.Forms.TextBox();
             this.cbBookCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.btnBookAdd = new System.Windows.Forms.Button();
             this.bookList = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnInvoiceDetail = new System.Windows.Forms.Button();
+            this.nmBookPrice = new System.Windows.Forms.NumericUpDown();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goodReceiptList)).BeginInit();
@@ -91,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmBookPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -243,6 +244,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1156, 147);
             this.panel4.TabIndex = 2;
+            // 
+            // btnInvoiceDetail
+            // 
+            this.btnInvoiceDetail.Location = new System.Drawing.Point(738, 104);
+            this.btnInvoiceDetail.Name = "btnInvoiceDetail";
+            this.btnInvoiceDetail.Size = new System.Drawing.Size(161, 33);
+            this.btnInvoiceDetail.TabIndex = 16;
+            this.btnInvoiceDetail.Text = "Detail";
+            this.btnInvoiceDetail.UseVisualStyleBackColor = true;
+            this.btnInvoiceDetail.Click += new System.EventHandler(this.btnInvoiceDetail_Click);
             // 
             // txtInvoiceCustomerPhone
             // 
@@ -424,7 +435,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtBookPrice);
+            this.panel1.Controls.Add(this.nmBookPrice);
             this.panel1.Controls.Add(this.cbBookCategory);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -442,13 +453,6 @@
             this.panel1.Size = new System.Drawing.Size(1156, 208);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // txtBookPrice
-            // 
-            this.txtBookPrice.Location = new System.Drawing.Point(331, 111);
-            this.txtBookPrice.Name = "txtBookPrice";
-            this.txtBookPrice.Size = new System.Drawing.Size(194, 26);
-            this.txtBookPrice.TabIndex = 13;
             // 
             // cbBookCategory
             // 
@@ -588,15 +592,17 @@
             this.tabControl1.Size = new System.Drawing.Size(1176, 618);
             this.tabControl1.TabIndex = 0;
             // 
-            // btnInvoiceDetail
+            // nmBookPrice
             // 
-            this.btnInvoiceDetail.Location = new System.Drawing.Point(738, 104);
-            this.btnInvoiceDetail.Name = "btnInvoiceDetail";
-            this.btnInvoiceDetail.Size = new System.Drawing.Size(161, 33);
-            this.btnInvoiceDetail.TabIndex = 16;
-            this.btnInvoiceDetail.Text = "Detail";
-            this.btnInvoiceDetail.UseVisualStyleBackColor = true;
-            this.btnInvoiceDetail.Click += new System.EventHandler(this.btnInvoiceDetail_Click);
+            this.nmBookPrice.Location = new System.Drawing.Point(318, 109);
+            this.nmBookPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmBookPrice.Name = "nmBookPrice";
+            this.nmBookPrice.Size = new System.Drawing.Size(177, 26);
+            this.nmBookPrice.TabIndex = 13;
             // 
             // Form1
             // 
@@ -626,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmBookPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,9 +685,9 @@
         private System.Windows.Forms.DataGridView bookList;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.NumericUpDown nmQty;
-        private System.Windows.Forms.TextBox txtBookPrice;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInvoiceDetail;
+        private System.Windows.Forms.NumericUpDown nmBookPrice;
     }
 }
 

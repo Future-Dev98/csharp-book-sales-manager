@@ -17,6 +17,8 @@ namespace BookSalesSanager.Model
             CreateTable(bookQuery, new string[] { "category" });
             // Create invoice table
             CreateTable(invoiceQuery);
+            // Create invoice details table
+            CreateTable(invoiceDetailsQuery, new string[] { "invoice", "book" });
             // Create good_receipt table
             CreateTable(goodReceiptQuery);
             // Create good_receipt_details table only if both good_receipt and book exist
@@ -51,6 +53,17 @@ namespace BookSalesSanager.Model
                           invoice_date DATETIME,
                           customer_name NVARCHAR(255) NOT NULL,
                           customer_phone VARCHAR(15)
+                      );
+                  END";
+
+        private string invoiceDetailsQuery = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'invoice_details')
+                  BEGIN
+                      CREATE TABLE invoice_details (
+                          book_id INT,
+                          invoice_id INT,
+                          qty INT,
+                          CONSTRAINT FK_invoice_details_book FOREIGN KEY (book_id) REFERENCES book(id),
+                          CONSTRAINT FK_invoice_details_invoice FOREIGN KEY (invoice_id) REFERENCES invoice(id)
                       );
                   END";
 

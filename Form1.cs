@@ -40,7 +40,7 @@ namespace BookSalesSanager
         private void btnAddBook(object sender, EventArgs e)
         {
             string query = $@"INSERT INTO book(name, author, qty, price, category_id)
-                            VALUES('{txtBookName.Text}', '{txtAuthor.Text}', {nmQty.Value}, {txtBookPrice.Text}, {selectedCategory})";
+                            VALUES('{txtBookName.Text.Replace("'", "''")}', '{txtAuthor.Text.Replace("'", "''")}', {nmQty.Value}, {nmBookPrice.Value}, {selectedCategory})";
             int result = dataProvider.execNonQuery(query);
             if (result > 0)
             {
@@ -275,12 +275,12 @@ namespace BookSalesSanager
             cbBookCategory.Text = row.Cells[2].Value.ToString();
             txtAuthor.Text = row.Cells[3].Value.ToString();
             nmQty.Value = (int)row.Cells[4].Value;
-            txtBookPrice.Text = row.Cells[5].Value.ToString();
+            nmBookPrice.Value = (decimal)row.Cells[5].Value;
         }
 
         private void btnBookEdit_Click(object sender, EventArgs e)
         {
-            string query = $"UPDATE book SET name='{txtBookName.Text}', author='{txtAuthor.Text}', category_id={selectedCategory}, qty={nmQty.Value}, price={txtBookPrice.Text} WHERE id={bookId}";
+            string query = $"UPDATE book SET name='{txtBookName.Text}', author='{txtAuthor.Text}', category_id={selectedCategory}, qty={nmQty.Value}, price={nmBookPrice.Value} WHERE id={bookId}";
 
             int result = dataProvider.execNonQuery(query);
 
@@ -454,7 +454,7 @@ namespace BookSalesSanager
         {
             if (invoiceList.Rows.Count > 0 && invoiceId != null && invoiceId > 0)
             {
-                FormInvoiceDetail detail = new FormInvoiceDetail();
+                FormInvoiceDetail detail = new FormInvoiceDetail(invoiceId);
                 detail.ShowDialog();
             }
         }

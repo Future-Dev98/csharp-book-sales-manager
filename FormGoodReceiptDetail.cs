@@ -176,5 +176,10 @@ namespace BookSalesSanager
             ComboBox cbBook = sender as ComboBox;
             bookId = (int)cbBook.SelectedValue;
         }
+
+        private void FormGoodReceiptDetail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
