@@ -30,6 +30,7 @@
         {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.dateGoodReceipt = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtGoodReceiptSupplierName = new System.Windows.Forms.TextBox();
@@ -75,6 +76,7 @@
             this.btnBookAdd = new System.Windows.Forms.Button();
             this.bookList = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnInvoiceDetail = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goodReceiptList)).BeginInit();
@@ -105,6 +107,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.dateGoodReceipt);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtGoodReceiptSupplierName);
@@ -116,6 +119,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1156, 103);
             this.panel2.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(748, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 33);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Detail";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_detail_click);
             // 
             // dateGoodReceipt
             // 
@@ -216,6 +229,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnInvoiceDetail);
             this.panel4.Controls.Add(this.txtInvoiceCustomerPhone);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.dInvoiceDate);
@@ -574,6 +588,16 @@
             this.tabControl1.Size = new System.Drawing.Size(1176, 618);
             this.tabControl1.TabIndex = 0;
             // 
+            // btnInvoiceDetail
+            // 
+            this.btnInvoiceDetail.Location = new System.Drawing.Point(738, 104);
+            this.btnInvoiceDetail.Name = "btnInvoiceDetail";
+            this.btnInvoiceDetail.Size = new System.Drawing.Size(161, 33);
+            this.btnInvoiceDetail.TabIndex = 16;
+            this.btnInvoiceDetail.Text = "Detail";
+            this.btnInvoiceDetail.UseVisualStyleBackColor = true;
+            this.btnInvoiceDetail.Click += new System.EventHandler(this.btnInvoiceDetail_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,6 +679,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.NumericUpDown nmQty;
         private System.Windows.Forms.TextBox txtBookPrice;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInvoiceDetail;
     }
 }
 

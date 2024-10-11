@@ -18,7 +18,7 @@ namespace BookSalesSanager
         private int bookId;
         private int categoryId;
         private int invoiceId;
-        private int goodReceiptId;
+        private int goodReceiptId = 0;
 
         public Form1()
         {
@@ -166,14 +166,14 @@ namespace BookSalesSanager
         {
             initBook();
             initCategory();
+            loadBookCategories();
+            initInvoice();
+            initGoodReceipt();
         }
 
         private void initBook()
         {
             loadBookList();
-            loadBookCategories();
-            initInvoice();
-            initGoodReceipt();
         }
 
         private void initCategory()
@@ -384,13 +384,15 @@ namespace BookSalesSanager
         private void goodReceiptList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowId = e.RowIndex;
-
-            if (rowId == -1) rowId = 0;
-            if (rowId == goodReceiptList.Rows.Count - 1) rowId = rowId - 1;
-            DataGridViewRow row = goodReceiptList.Rows[rowId];
-            goodReceiptId = (int)row.Cells[0].Value;
-            dateGoodReceipt.Text = Convert.ToDateTime(row.Cells[1].Value).ToString("yyyy-MM-dd");
-            txtGoodReceiptSupplierName.Text = row.Cells[2].Value.ToString();
+            if (goodReceiptList.Rows.Count > 1)
+            {
+                if (rowId == -1) rowId = 0;
+                if (rowId == goodReceiptList.Rows.Count - 1) rowId = rowId - 1;
+                DataGridViewRow row = goodReceiptList.Rows[rowId];
+                goodReceiptId = (int)row.Cells[0].Value;
+                dateGoodReceipt.Text = Convert.ToDateTime(row.Cells[1].Value).ToString("yyyy-MM-dd");
+                txtGoodReceiptSupplierName.Text = row.Cells[2].Value.ToString();
+            }
         }
 
         private void addGoodReceipt_Click(object sender, EventArgs e)
@@ -436,6 +438,24 @@ namespace BookSalesSanager
             else
             {
                 MessageBox.Show("Delete good receipt failed!");
+            }
+        }
+
+        private void btn_detail_click(object sender, EventArgs e)
+        {
+            if (goodReceiptList.Rows.Count > 0 && goodReceiptId != null && goodReceiptId > 0)
+            {
+                FormGoodReceiptDetail detail = new FormGoodReceiptDetail(goodReceiptId);
+                detail.ShowDialog();
+            }
+        }
+
+        private void btnInvoiceDetail_Click(object sender, EventArgs e)
+        {
+            if (invoiceList.Rows.Count > 0 && invoiceId != null && invoiceId > 0)
+            {
+                FormInvoiceDetail detail = new FormInvoiceDetail();
+                detail.ShowDialog();
             }
         }
     }
