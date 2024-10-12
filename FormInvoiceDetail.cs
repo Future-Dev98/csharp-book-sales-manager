@@ -17,20 +17,17 @@ namespace BookSalesSanager
             public int Id { get; set; }
             public string Name { get; set; }
         }
-        private DataProvider dataProvider;
+        private DataProvider dataProvider = new DataProvider();
         private int invoiceDetailId;
         private int bookId;
+        private string editbookName;
         private List<Book> listBook;
         public FormInvoiceDetail(int invoiceId)
         {
             InitializeComponent();
             this.invoiceDetailId = invoiceId;
             loadInvoiceDetails();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            loadBook();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,7 +88,7 @@ namespace BookSalesSanager
                 if (rowId == -1) rowId = 0;
                 if (rowId == invoiceDetailList.Rows.Count - 1) rowId = rowId - 1;
                 DataGridViewRow row = invoiceDetailList.Rows[rowId];
-                cbBook.Text = row.Cells[0].Value.ToString();
+                cbBook.Text = editbookName = row.Cells[0].Value.ToString();
                 nmQty.Value = (int)row.Cells[1].Value;
             }
         }
@@ -104,7 +101,7 @@ namespace BookSalesSanager
             string query = $"INSERT INTO invoice_details(book_id, invoice_id, qty) VALUES({bookId}, {invoiceDetailId}, {nmQty.Value})";
             if (dt.Rows.Count > 0 && Convert.ToInt32(dt.Rows[0][0]) > 0)
             {
-                query = $"UPDATE good_receipt_details SET qty={nmQty.Value} WHERE invoice_id={invoiceDetailId} AND book_id={bookId}";
+                query = $"UPDATE invoice_details SET qty={nmQty.Value} WHERE invoice_id={invoiceDetailId} AND book_id={bookId}";
             }
 
             int result = dataProvider.execNonQuery(query);
@@ -112,22 +109,66 @@ namespace BookSalesSanager
             if (result > 0)
             {
                 loadInvoiceDetails();
-                MessageBox.Show("Added good receipt successfully!");
+                MessageBox.Show("Added invoice row successfully!");
             }
             else
             {
-                MessageBox.Show("Add good receipt failed!");
+                MessageBox.Show("Add invoice row failed!");
             }
         }
 
         private void btnEditInvoice_Click(object sender, EventArgs e)
         {
+            string query = $"UPDATE invoice_details SET book_id={bookId}, qty={nmQty.Value} WHERE invoice_id={invoiceDetailId} AND book_id={bookId}";
+            if (editbookName != cbBook.Text)
+            {
+                try
+                {
+                    string checkQuery = $"SELECT COUNT(*) FROM invoice_details WHERE invoice_id = {invoiceDetailId} AND book_id = {bookId}";
+                    DataTable dt = dataProvider.execQuery(checkQuery);
+                    if (dt.Rows.Count > 0 && Convert.ToInt32(dt.Rows[0][0]) > 0)
+                    {
+                        int oldBookId = listBook.FirstOrDefault(b => b.Name == editbookName)?.Id ?? 0;
+                        string queryDelete = $"DELETE FROM invoice_details WHERE invoice_id={invoiceDetailId} AND book_id={oldBookId}";
 
+                        dataProvider.execNonQuery(queryDelete);
+                    }
+                    else
+                    {
+                        query = $"INSERT INTO invoice_details(invoice_id, book_id, qty) VALUES({invoiceDetailId}, {bookId}, {nmQty.Value})";
+                    }
+
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show($"An error occurred: {er.Message}");
+                }
+            }
+            int result = dataProvider.execNonQuery(query);
+            if (result > 0)
+            {
+                loadInvoiceDetails();
+                MessageBox.Show($"Updated invoice row ({invoiceDetailId}) successfully!");
+            }
+            else
+            {
+                MessageBox.Show($"Update invoice row ({invoiceDetailId}) failed!");
+            }
         }
 
         private void btnDeleteInvoice_Click(object sender, EventArgs e)
         {
-
+            string query = $"DELETE FROM invoice_details WHERE invoice_id={invoiceDetailId} AND book_id={bookId}";
+            int result = dataProvider.execNonQuery(query);
+            if (result > 0)
+            {
+                loadInvoiceDetails();
+                MessageBox.Show($"Deleted invoice row ({invoiceDetailId}) successfully!");
+            }
+            else
+            {
+                MessageBox.Show($"Delete invoice row ({invoiceDetailId}) failed!");
+            }
         }
     }
 }

@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.invoiceDetailList = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Sum = new System.Windows.Forms.Label();
             this.btnDeleteInvoice = new System.Windows.Forms.Button();
             this.btnEditInvoice = new System.Windows.Forms.Button();
             this.btnAddInvoice = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbBook = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Sum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDetailList)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmQty)).BeginInit();
@@ -79,6 +79,16 @@
             this.panel1.Size = new System.Drawing.Size(795, 101);
             this.panel1.TabIndex = 2;
             // 
+            // Sum
+            // 
+            this.Sum.AutoSize = true;
+            this.Sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sum.Location = new System.Drawing.Point(558, 65);
+            this.Sum.Name = "Sum";
+            this.Sum.Size = new System.Drawing.Size(59, 20);
+            this.Sum.TabIndex = 10;
+            this.Sum.Text = "Sum: 0";
+            // 
             // btnDeleteInvoice
             // 
             this.btnDeleteInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,6 +125,11 @@
             // nmQty
             // 
             this.nmQty.Location = new System.Drawing.Point(485, 18);
+            this.nmQty.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nmQty.Name = "nmQty";
             this.nmQty.Size = new System.Drawing.Size(278, 20);
             this.nmQty.TabIndex = 3;
@@ -147,16 +162,6 @@
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Book name";
-            // 
-            // Sum
-            // 
-            this.Sum.AutoSize = true;
-            this.Sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sum.Location = new System.Drawing.Point(558, 65);
-            this.Sum.Name = "Sum";
-            this.Sum.Size = new System.Drawing.Size(59, 20);
-            this.Sum.TabIndex = 10;
-            this.Sum.Text = "Sum: 0";
             // 
             // FormInvoiceDetail
             // 
